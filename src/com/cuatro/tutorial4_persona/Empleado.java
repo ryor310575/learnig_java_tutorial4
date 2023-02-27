@@ -66,12 +66,14 @@ public class Empleado extends Persona implements Comparable, Trabajadores{
 		sueldo*=(1+porcentaje/100);
 	}
 	
-	/*
-	 * Otros Metodos
-	 */
 	public void cambiaSeccion(String seccion){//Setter
 		this.seccion=seccion;
 	}
+	
+	/*
+	 * Otros Metodos
+	 */
+
 	@Override
 	public int compareTo(Object miObjeto) {//Implementación de la interfaz Comparable
 		int compareResoult;
