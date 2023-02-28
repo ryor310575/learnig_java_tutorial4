@@ -10,7 +10,7 @@ public class Empleado extends Persona implements Comparable, Trabajadores{
 	private Date altaContrato;
 	private String seccion;
 	private int id;
-	private static int nextId=1;
+	private static int nextId=1; //variable estatica
 	
 	/*
 	 * Constructores
