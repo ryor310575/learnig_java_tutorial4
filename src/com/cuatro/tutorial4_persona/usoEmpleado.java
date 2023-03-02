@@ -13,8 +13,12 @@ public class usoEmpleado {
 		 empleado[0]=new Empleado("Jose Gomez",1500,1980,06,24);
 		 empleado[1]=new Empleado("Alva Perez",1600,1995,8,15);
 		 empleado[2]=new Empleado("Mirta Casas",1250,2001,12,22);
-		 empleado[3]=jefe_rrhh; //Uso del Polimorfismo, el objeto Jefe es parte de un arreglo de tipo Empleado
-		 empleado[4]=new Jefatura("Maria Perez",95000,1999,5,26);//Uso del Polimorfismo, el objeto Jefe es parte de un arreglo de tipo Empleado
+		 /*
+		  * el objeto Jefe del tipo Jefaturaes parte de un arreglo de tipo 
+		  * Empleado. Ademas se puede crear un nuevo objeto de Jefatura.
+		  */
+		 empleado[3]=jefe_rrhh; //Uso del Polimorfismo
+		 empleado[4]=new Jefatura("Maria Perez",95000,1999,5,26);//Uso del Polimorfismo
 		 
 		 Jefatura jefa_finanzas=(Jefatura)empleado[4];//Casting
 		 jefa_finanzas.estableceIncentivo(02570);	
@@ -34,9 +38,7 @@ public class usoEmpleado {
 		  */
 		 for (Empleado e: empleado) {
 				e.subeSueldo(10);	
-				 }
-		 System.out.println("Nombre: "+jefe_rrhh.dameNombre()+" "+jefe_rrhh.dameDescripcion());
-		 System.out.println("Nombre: "+pasante.dameNombre()+" "+pasante.dameDescripcion());
+				 } 
 		 
 		/*
 		 * Imprimir el nombre de los empleados
@@ -44,6 +46,16 @@ public class usoEmpleado {
 		 for (Empleado e: empleado) {
 				System.out.println("El Nombre: "+e.dameNombre()+" el sueldo con aumento es es "+e.dameSueldo());	
 				 }
+		 /*
+		  * Imprimir los casos especiales para ver la herencia
+		  * Probando el uso de la clase ABSTRACTA Persona 
+		  * el metodo dameDescripcion
+		  * implementada en Empleado y heredada por jefatura e implementada
+		  * de forma diferente en la clase alumno.
+		  */
+		 System.out.println("Nombre: "+jefe_rrhh.dameNombre()+" "+jefe_rrhh.dameDescripcion());
+		 System.out.println("Nombre: "+pasante.dameNombre()+" "+pasante.dameDescripcion());
+		 System.out.println(jefe_rrhh.tomarDesiciones("Dar mas dias de vacaciones"));
 	}
 
 }

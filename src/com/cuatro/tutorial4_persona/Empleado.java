@@ -24,6 +24,10 @@ public class Empleado extends Persona implements Comparable, Trabajadores{
 	}
 	
 	public Empleado(String nom, double sue, int agno, int mes, int dia) {//Constructor
+		/*
+		 *Se debe llamar al Constructor 
+		 *de la clase Padre 
+		 */
 		super(nom); //Toma el constructor de la clase Padre
 		sueldo=sue;
 		seccion = "Administración";
@@ -73,9 +77,9 @@ public class Empleado extends Persona implements Comparable, Trabajadores{
 	/*
 	 * Otros Metodos
 	 */
-
+	//Implementación de la interfaz Comparable
 	@Override
-	public int compareTo(Object miObjeto) {//Implementación de la interfaz Comparable
+	public int compareTo(Object miObjeto) {
 		int compareResoult;
 		Empleado otroEmpleado = (Empleado) miObjeto;// Casting de el objeto miObjeto a Empleado
 		if(this.sueldo<otroEmpleado.sueldo) {
@@ -85,7 +89,6 @@ public class Empleado extends Persona implements Comparable, Trabajadores{
 		}else {
 			compareResoult=0;
 		}
-		
 		return compareResoult;
 	}
 }
